@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "0.1.0-draft.1",
+  "plugin": {
+    "id": "sample-admitted",
+    "version": "0.1.0"
+  },
+  "capabilities": {
+    "required": [
+      "cordis.effect",
+      "ctx.tools"
+    ],
+    "optional": []
+  },
+  "resources": [
+    {
+      "kind": "tool",
+      "name": "sample_admitted_hello",
+      "scope": "global"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Bundle layer contributed by this package. The official launcher applies it
+# when the package is installed into a profile.
+#
+# The row id is prefixed with the package name (plus a colon) and the module
+# name is the installed package name, so Node resolution finds the entry
+# point instead of a relative source path. Row order carries no load
+# semantics; activation is service-availability driven.
+
+- insert:
+    - id: 'sample-admitted:sample-admitted'
+      name: 'sample-admitted'

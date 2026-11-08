@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "module": "nodenext",
+    "target": "es2022",
+    "strict": false
+  },
+  "include": [
+    "index.js",
+    "test/**/*.js"
+  ]
+}
