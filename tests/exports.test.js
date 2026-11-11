@@ -81,7 +81,7 @@ test('importing the library has no side effects', async () => {
   // The module graph above is the entire surface; it only defines functions and
   // constant values. This test fails loudly if a future import grows an effect.
   assert.equal(typeof kit.writeScaffold, 'function');
-  assert.equal(kit.KIT_VERSION, '0.0.0');
+  assert.equal(kit.KIT_VERSION, '0.1.0-draft.1');
   const pkg = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(pkg.main, './src/index.js');
   assert.equal(pkg.types, './src/index.d.ts');
@@ -97,6 +97,6 @@ test('the kit declares no host manifest fields of its own', async () => {
   // `dsh.compatibleHost` is not a field any official package declares.
   assert.equal(pkg.dsh, undefined);
   assert.equal(pkg.client, undefined);
-  assert.equal(pkg.license, undefined, 'a private package declares no license field it cannot substantiate');
+  assert.equal(pkg.license, 'MIT', 'the license is the decided one, stated in LICENSE');
   assert.equal(pkg.engines.node, '>=24.9.0', 'the requirement matches the pinned official packages');
 });

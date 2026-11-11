@@ -6,7 +6,7 @@
  */
 
 /** Kit release. */
-export declare const KIT_VERSION: '0.0.0';
+export declare const KIT_VERSION: '0.1.0-draft.1';
 /** Reference host version; a source pin, not a compatibility claim. */
 export declare const HOST_VERSION: '0.2.2-alpha.2';
 /** `engines.dsh` written into generated package.json files: the exact pinned build. */

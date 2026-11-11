@@ -20,7 +20,7 @@ import { isPromiseLike } from './internal/value.js';
 // ---------------------------------------------------------------------------
 
 /** Version of this toolkit. The scaffold CLI also prints it in `--help`. */
-export const KIT_VERSION = '0.0.0';
+export const KIT_VERSION = '0.1.0-draft.1';
 
 /**
  * Declaration schema revision this kit emits.

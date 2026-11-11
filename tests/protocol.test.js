@@ -27,7 +27,7 @@ const sample = () => toolDeclaration({ pluginId: 'acme-tools', pluginVersion: '0
 const accepting = () => ({ valid: true, issues: [] });
 
 test('kit and host versions are explicit literals, not ranges', () => {
-  assert.equal(KIT_VERSION, '0.0.0');
+  assert.equal(KIT_VERSION, '0.1.0-draft.1');
   assert.equal(HOST_VERSION, '0.2.2-alpha.2');
   assert.equal(PROTOCOL_VERSION, '0.1.0-draft.1');
   assert.equal(NODE_ENGINE, '>=24.9.0');
@@ -37,7 +37,7 @@ test('kit and host versions are explicit literals, not ranges', () => {
   // The kit is not a host plugin: it declares no host manifest fields at all.
   // `dsh.bundle` would claim this package is installable into a profile.
   assert.equal(pkg.dsh, undefined);
-  assert.equal(pkg.license, undefined, 'no license is invented for this private package');
+  assert.equal(pkg.license, 'MIT', 'the license is the decided one, stated in LICENSE');
 });
 
 test('every generated dependency is pinned to one exact version, and they are not interchangeable', () => {

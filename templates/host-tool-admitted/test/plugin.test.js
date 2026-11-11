@@ -23,7 +23,7 @@ test('module exports the Cordis plugin contract and nothing else', () => {
   assert.deepEqual(Object.keys(plugin).sort(), ['Config', 'apply', 'generatedBy', 'inject', 'name', 'version']);
   assert.equal(plugin.name, 'sample-admitted');
   assert.equal(plugin.version, '0.1.0');
-  assert.equal(plugin.generatedBy, 'dsh-plugin-kit@0.0.0');
+  assert.equal(plugin.generatedBy, 'dsh-plugin-kit@0.1.0-draft.1');
   assert.equal(typeof plugin.apply, 'function');
   // `Schema.object({...})` returns a callable schema (Schemastery creates it as
   // a function whose prototype is Function.prototype), not a plain object.
