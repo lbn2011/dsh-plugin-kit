@@ -86,7 +86,11 @@ test('importing the library has no side effects', async () => {
   assert.equal(pkg.main, './src/index.js');
   assert.equal(pkg.types, './src/index.d.ts');
   assert.equal(pkg.bin['dsh-plugin-kit'], './src/cli.js');
-  assert.equal(pkg.private, true);
+  // Deliberate, and the kit's side of a rule recorded in
+  // dsh-compat-platform/docs/requirements-and-design/2026-11-11-package-flag-policy.md:
+  // no audit, tarball or publish path touches this package, so the flag stays set
+  // until that evidence exists.
+  assert.equal(pkg.private, true, 'clearing `private` here needs a tarball audit first');
   assert.deepEqual(Object.keys(pkg.dependencies ?? {}), [], 'the kit must stay dependency-free');
   assert.deepEqual(Object.keys(pkg.peerDependencies ?? {}), [], 'the kit must not require host packages');
 });
